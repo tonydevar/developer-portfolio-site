@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce application with product listings, shopping cart, and secure checkout. Built with React, Node.js, and PostgreSQL.",
+    "image": "/images/project-ecommerce.png",
+    "tags": ["React", "Node.js", "PostgreSQL", "Stripe"],
+    "liveUrl": "https://example.com/ecommerce",
+    "repoUrl": "https://github.com/example/ecommerce"
+  },
+  {
+    "id": 2,
+    "title": "Task Management App",
+    "description": "A collaborative task manager with real-time updates, drag-and-drop boards, and team assignments. Powered by Vue.js and Firebase.",
+    "image": "/images/project-taskmanager.png",
+    "tags": ["Vue.js", "Firebase", "Tailwind CSS", "WebSockets"],
+    "liveUrl": "https://example.com/taskmanager",
+    "repoUrl": "https://github.com/example/taskmanager"
+  },
+  {
+    "id": 3,
+    "title": "Weather Dashboard",
+    "description": "An interactive weather dashboard displaying real-time forecasts, historical data charts, and location-based alerts using the OpenWeather API.",
+    "image": "/images/project-weather.png",
+    "tags": ["JavaScript", "Chart.js", "REST API", "CSS Grid"],
+    "liveUrl": "https://example.com/weather",
+    "repoUrl": "https://github.com/example/weather"
+  },
+  {
+    "id": 4,
+    "title": "Developer Portfolio Site",
+    "description": "This very portfolio — a responsive single-page site with smooth animations, dark/light theme toggle, and a contact form backed by an Express API.",
+    "image": "/images/project-portfolio.png",
+    "tags": ["HTML", "CSS", "JavaScript", "Express"],
+    "liveUrl": "https://example.com/portfolio",
+    "repoUrl": "https://github.com/example/portfolio"
+  }
+]
