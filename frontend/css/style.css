@@ -99,10 +99,17 @@ ul {
 /* ============================================================
    Navbar
    ============================================================ */
-.navbar {
+/* Sticky positioning must live on <header> so that the entire
+   header (nav + mobile drawer) is the containing block, not just
+   the <nav> child. This ensures position:sticky works correctly
+   across the full scroll range. */
+header {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
