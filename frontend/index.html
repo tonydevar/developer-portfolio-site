@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Developer portfolio — projects, skills, and contact." />
+  <title>Dev Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Apply stored theme before paint to avoid flash -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('portfolio-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="navbar__logo">dev<span>.</span>portfolio</a>
+
+      <ul class="navbar__links" role="list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Toggle dark/light theme"
+          title="Toggle theme"
+        >🌙</button>
+        <button
+          id="hamburger"
+          class="navbar__hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >☰</button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu (shown below navbar on small screens) -->
+    <div id="mobile-menu" class="navbar__mobile-menu" role="menu">
+      <a href="#hero" role="menuitem">Home</a>
+      <a href="#projects" role="menuitem">Projects</a>
+      <a href="#skills" role="menuitem">Skills</a>
+      <a href="#contact" role="menuitem">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="hero__badge" data-animate>Available for hire</span>
+
+          <h1 class="hero__title" data-animate>
+            Hi, I'm <span>Alex Dev</span>
+          </h1>
+
+          <p class="hero__tagline" data-animate>
+            <span id="typing-text"></span><span class="cursor" aria-hidden="true"></span>
+          </p>
+
+          <div class="hero__cta" data-animate>
+            <a href="#projects" class="btn btn--primary">View My Work</a>
+            <a href="#contact" class="btn btn--outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true" data-animate>
+          <div style="
+            width: 100%;
+            aspect-ratio: 1;
+            max-width: 360px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-bg-alt) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            box-shadow: 0 20px 60px var(--color-shadow);
+          ">👨‍💻</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS SECTION
+         ============================================================ -->
+    <section id="projects" aria-label="Projects">
+      <div class="section-inner">
+        <h2 class="section-title" data-animate>My <span>Projects</span></h2>
+        <p class="section-subtitle" data-animate>A selection of things I've built.</p>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project Card 1 -->
+          <article class="project-card" data-animate>
+            <div class="project-card__image" aria-hidden="true">🛒</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">E-Commerce Platform</h3>
+              <p class="project-card__description">
+                A full-stack e-commerce application with product listings, shopping cart,
+                and secure checkout. Built with React, Node.js, and PostgreSQL.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Stripe</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://example.com/ecommerce" target="_blank" rel="noopener">Live ↗</a>
+                <a href="https://github.com/example/ecommerce" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card" data-animate>
+            <div class="project-card__image" aria-hidden="true">📋</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Task Management App</h3>
+              <p class="project-card__description">
+                A collaborative task manager with real-time updates, drag-and-drop
+                boards, and team assignments. Powered by Vue.js and Firebase.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">WebSockets</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://example.com/taskmanager" target="_blank" rel="noopener">Live ↗</a>
+                <a href="https://github.com/example/taskmanager" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card" data-animate>
+            <div class="project-card__image" aria-hidden="true">🌤️</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Weather Dashboard</h3>
+              <p class="project-card__description">
+                An interactive weather dashboard displaying real-time forecasts,
+                historical data charts, and location-based alerts using the OpenWeather API.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Chart.js</span>
+                <span class="tag">REST API</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://example.com/weather" target="_blank" rel="noopener">Live ↗</a>
+                <a href="https://github.com/example/weather" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 4 -->
+          <article class="project-card" data-animate>
+            <div class="project-card__image" aria-hidden="true">💼</div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Developer Portfolio Site</h3>
+              <p class="project-card__description">
+                This very portfolio — a responsive single-page site with smooth animations,
+                dark/light theme toggle, and a contact form backed by an Express API.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Express</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://example.com/portfolio" target="_blank" rel="noopener">Live ↗</a>
+                <a href="https://github.com/example/portfolio" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS SECTION
+         ============================================================ -->
+    <section id="skills" aria-label="Skills">
+      <div class="section-inner">
+        <h2 class="section-title" data-animate>Skills &amp; <span>Technologies</span></h2>
+        <p class="section-subtitle" data-animate>Tools I work with day to day.</p>
+
+        <div class="skills-grid">
+          <div class="skill-item" data-animate style="--skill-pct: 90%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">JavaScript / TypeScript</span>
+              <span class="skill-item__pct">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 85%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">React / Vue.js</span>
+              <span class="skill-item__pct">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 80%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">Node.js / Express</span>
+              <span class="skill-item__pct">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 75%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">HTML / CSS</span>
+              <span class="skill-item__pct">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 70%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">PostgreSQL / MongoDB</span>
+              <span class="skill-item__pct">70%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 72%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">Docker / CI/CD</span>
+              <span class="skill-item__pct">72%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 65%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">Python</span>
+              <span class="skill-item__pct">65%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate style="--skill-pct: 68%">
+            <div class="skill-item__header">
+              <span class="skill-item__name">Git / GitHub</span>
+              <span class="skill-item__pct">68%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+        </div>
+
+        <div class="skills-badges" data-animate>
+          <span class="skill-badge">⚡ JavaScript</span>
+          <span class="skill-badge">🔷 TypeScript</span>
+          <span class="skill-badge">⚛️ React</span>
+          <span class="skill-badge">🟢 Vue.js</span>
+          <span class="skill-badge">🟩 Node.js</span>
+          <span class="skill-badge">🐘 PostgreSQL</span>
+          <span class="skill-badge">🍃 MongoDB</span>
+          <span class="skill-badge">🐳 Docker</span>
+          <span class="skill-badge">🐍 Python</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section id="contact" aria-label="Contact">
+      <div class="section-inner">
+        <h2 class="section-title" data-animate>Get In <span>Touch</span></h2>
+        <p class="section-subtitle" data-animate>I'd love to hear from you.</p>
+
+        <div class="contact-layout">
+          <div class="contact-info" data-animate>
+            <h3 class="contact-info__title">Let's work together</h3>
+            <p class="contact-info__text">
+              Whether you have a project in mind, a question, or just want to say hello —
+              my inbox is always open.
+            </p>
+            <ul class="contact-info__items">
+              <li class="contact-info__item"><span>📧</span> <span>alex@example.com</span></li>
+              <li class="contact-info__item"><span>📍</span> <span>San Francisco, CA</span></li>
+              <li class="contact-info__item"><span>💼</span> <span>Open to remote roles</span></li>
+            </ul>
+          </div>
+
+          <form
+            id="contact-form"
+            class="contact-form"
+            data-animate
+            novalidate
+            aria-label="Contact form"
+          >
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                maxlength="100"
+                required
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="What's on your mind?"
+                maxlength="2000"
+                required
+              ></textarea>
+            </div>
+
+            <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+
+            <button type="submit" class="btn btn--primary" id="submit-btn">
+              Send Message ✉️
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <p>Built with <span>♥</span> by Alex Dev &mdash; &copy; <span id="footer-year"></span></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/typing.js"></script>
+  <script src="js/contact.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
