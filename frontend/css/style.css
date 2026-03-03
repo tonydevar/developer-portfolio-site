@@ -795,3 +795,72 @@ footer span {
     grid-template-columns: 1fr 2fr;
   }
 }
+
+/* ============================================================
+   Skeleton loading for project cards
+   ============================================================ */
+@keyframes skeleton-pulse {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.project-card--skeleton {
+  pointer-events: none;
+  opacity: 1 !important;   /* override data-animate initial state */
+  transform: none !important;
+}
+
+.project-card--skeleton .project-card__img-wrap {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg-alt) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-pulse 1.5s ease infinite;
+  height: 200px;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card--skeleton .project-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-card--skeleton .skeleton-line {
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg-alt) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-pulse 1.5s ease infinite;
+}
+
+.project-card--skeleton .skeleton-line--title  { width: 60%; height: 18px; }
+.project-card--skeleton .skeleton-line--text   { width: 90%; }
+.project-card--skeleton .skeleton-line--text2  { width: 75%; }
+.project-card--skeleton .skeleton-line--tags   { width: 50%; height: 22px; }
+.project-card--skeleton .skeleton-line--links  { width: 40%; }
+
+/* Error state */
+.projects-error {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.projects-error strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
