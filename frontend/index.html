@@ -65,8 +65,10 @@
         <div class="hero__content">
           <span class="hero__badge" data-animate>Available for hire</span>
 
+          <h2 class="hero__subtitle" data-animate>Full-Stack Developer</h2>
+
           <h1 class="hero__title" data-animate>
-            Hi, I'm <span>Alex Dev</span>
+            Hi, I'm <span>Jane Doe</span>
           </h1>
 
           <p class="hero__tagline" data-animate>
@@ -108,7 +110,15 @@
         <div class="projects-grid" id="projects-grid">
           <!-- Project Card 1 -->
           <article class="project-card" data-animate>
-            <div class="project-card__image" aria-hidden="true">🛒</div>
+            <div class="project-card__img-wrap">
+              <img
+                src="images/project-ecommerce.png"
+                alt="E-Commerce Platform screenshot"
+                class="project-card__img"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-card__img-fallback" style="--fallback-color:#6c63ff" aria-hidden="true">🛒</div>
+            </div>
             <div class="project-card__body">
               <h3 class="project-card__title">E-Commerce Platform</h3>
               <p class="project-card__description">
@@ -122,15 +132,23 @@
                 <span class="tag">Stripe</span>
               </div>
               <div class="project-card__links">
-                <a href="https://example.com/ecommerce" target="_blank" rel="noopener">Live ↗</a>
-                <a href="https://github.com/example/ecommerce" target="_blank" rel="noopener">GitHub ↗</a>
+                <a href="https://example.com/ecommerce" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <a href="https://github.com/example/ecommerce" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
               </div>
             </div>
           </article>
 
           <!-- Project Card 2 -->
           <article class="project-card" data-animate>
-            <div class="project-card__image" aria-hidden="true">📋</div>
+            <div class="project-card__img-wrap">
+              <img
+                src="images/project-taskmanager.png"
+                alt="Task Management App screenshot"
+                class="project-card__img"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-card__img-fallback" style="--fallback-color:#f7975a" aria-hidden="true">📋</div>
+            </div>
             <div class="project-card__body">
               <h3 class="project-card__title">Task Management App</h3>
               <p class="project-card__description">
@@ -144,15 +162,23 @@
                 <span class="tag">WebSockets</span>
               </div>
               <div class="project-card__links">
-                <a href="https://example.com/taskmanager" target="_blank" rel="noopener">Live ↗</a>
-                <a href="https://github.com/example/taskmanager" target="_blank" rel="noopener">GitHub ↗</a>
+                <a href="https://example.com/taskmanager" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <a href="https://github.com/example/taskmanager" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
               </div>
             </div>
           </article>
 
           <!-- Project Card 3 -->
           <article class="project-card" data-animate>
-            <div class="project-card__image" aria-hidden="true">🌤️</div>
+            <div class="project-card__img-wrap">
+              <img
+                src="images/project-weather.png"
+                alt="Weather Dashboard screenshot"
+                class="project-card__img"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-card__img-fallback" style="--fallback-color:#48c8e8" aria-hidden="true">🌤️</div>
+            </div>
             <div class="project-card__body">
               <h3 class="project-card__title">Weather Dashboard</h3>
               <p class="project-card__description">
@@ -166,15 +192,23 @@
                 <span class="tag">CSS Grid</span>
               </div>
               <div class="project-card__links">
-                <a href="https://example.com/weather" target="_blank" rel="noopener">Live ↗</a>
-                <a href="https://github.com/example/weather" target="_blank" rel="noopener">GitHub ↗</a>
+                <a href="https://example.com/weather" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <a href="https://github.com/example/weather" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
               </div>
             </div>
           </article>
 
           <!-- Project Card 4 -->
           <article class="project-card" data-animate>
-            <div class="project-card__image" aria-hidden="true">💼</div>
+            <div class="project-card__img-wrap">
+              <img
+                src="images/project-portfolio.png"
+                alt="Developer Portfolio screenshot"
+                class="project-card__img"
+                onerror="this.style.display='none'"
+              />
+              <div class="project-card__img-fallback" style="--fallback-color:#4ecb71" aria-hidden="true">💼</div>
+            </div>
             <div class="project-card__body">
               <h3 class="project-card__title">Developer Portfolio Site</h3>
               <p class="project-card__description">
@@ -188,8 +222,8 @@
                 <span class="tag">Express</span>
               </div>
               <div class="project-card__links">
-                <a href="https://example.com/portfolio" target="_blank" rel="noopener">Live ↗</a>
-                <a href="https://github.com/example/portfolio" target="_blank" rel="noopener">GitHub ↗</a>
+                <a href="https://example.com/portfolio" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+                <a href="https://github.com/example/portfolio" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
               </div>
             </div>
           </article>
@@ -206,7 +240,7 @@
         <p class="section-subtitle" data-animate>Tools I work with day to day.</p>
 
         <div class="skills-grid">
-          <div class="skill-item" data-animate style="--skill-pct: 90%">
+          <div class="skill-item" data-animate data-level="90">
             <div class="skill-item__header">
               <span class="skill-item__name">JavaScript / TypeScript</span>
               <span class="skill-item__pct">90%</span>
@@ -214,7 +248,7 @@
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 85%">
+          <div class="skill-item" data-animate data-level="85">
             <div class="skill-item__header">
               <span class="skill-item__name">React / Vue.js</span>
               <span class="skill-item__pct">85%</span>
@@ -222,7 +256,7 @@
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 80%">
+          <div class="skill-item" data-animate data-level="80">
             <div class="skill-item__header">
               <span class="skill-item__name">Node.js / Express</span>
               <span class="skill-item__pct">80%</span>
@@ -230,15 +264,15 @@
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 75%">
+          <div class="skill-item" data-animate data-level="88">
             <div class="skill-item__header">
               <span class="skill-item__name">HTML / CSS</span>
-              <span class="skill-item__pct">75%</span>
+              <span class="skill-item__pct">88%</span>
             </div>
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 70%">
+          <div class="skill-item" data-animate data-level="70">
             <div class="skill-item__header">
               <span class="skill-item__name">PostgreSQL / MongoDB</span>
               <span class="skill-item__pct">70%</span>
@@ -246,7 +280,7 @@
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 72%">
+          <div class="skill-item" data-animate data-level="72">
             <div class="skill-item__header">
               <span class="skill-item__name">Docker / CI/CD</span>
               <span class="skill-item__pct">72%</span>
@@ -254,7 +288,7 @@
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 65%">
+          <div class="skill-item" data-animate data-level="65">
             <div class="skill-item__header">
               <span class="skill-item__name">Python</span>
               <span class="skill-item__pct">65%</span>
@@ -262,10 +296,26 @@
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
 
-          <div class="skill-item" data-animate style="--skill-pct: 68%">
+          <div class="skill-item" data-animate data-level="78">
             <div class="skill-item__header">
               <span class="skill-item__name">Git / GitHub</span>
-              <span class="skill-item__pct">68%</span>
+              <span class="skill-item__pct">78%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate data-level="60">
+            <div class="skill-item__header">
+              <span class="skill-item__name">GraphQL / REST APIs</span>
+              <span class="skill-item__pct">60%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-bar__fill"></div></div>
+          </div>
+
+          <div class="skill-item" data-animate data-level="55">
+            <div class="skill-item__header">
+              <span class="skill-item__name">AWS / Cloud</span>
+              <span class="skill-item__pct">55%</span>
             </div>
             <div class="skill-bar"><div class="skill-bar__fill"></div></div>
           </div>
@@ -365,7 +415,7 @@
        FOOTER
        ============================================================ -->
   <footer>
-    <p>Built with <span>♥</span> by Alex Dev &mdash; &copy; <span id="footer-year"></span></p>
+    <p>Built with <span>♥</span> by Jane Doe &mdash; &copy; <span id="footer-year"></span></p>
   </footer>
 
   <!-- Scripts -->

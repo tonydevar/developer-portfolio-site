@@ -2,13 +2,17 @@
 
 /* ============================================================
    Typing Effect — Hero tagline
+   Pure JS, no libraries. Uses setTimeout loops and the CSS
+   .cursor blink keyframe already defined in style.css.
+   Cycles through at least 3 tagline strings.
    ============================================================ */
 (function initTyping() {
   var phrases = [
-    'Full-Stack Developer',
-    'UI/UX Enthusiast',
-    'Open Source Contributor',
-    'Problem Solver',
+    'Building scalable web applications',
+    'Crafting clean, maintainable code',
+    'Turning ideas into products',
+    'Open source contributor',
+    'Always learning, always shipping',
   ];
 
   var el = document.getElementById('typing-text');
@@ -17,35 +21,41 @@
   var phraseIndex = 0;
   var charIndex = 0;
   var isDeleting = false;
-  var typingSpeed = 90;
-  var deletingSpeed = 50;
-  var pauseAfterPhrase = 1800;
-  var pauseBeforeType = 400;
+
+  /* Timing constants (ms) */
+  var TYPING_SPEED   = 85;
+  var DELETING_SPEED = 45;
+  var PAUSE_AFTER    = 2000;
+  var PAUSE_BEFORE   = 350;
 
   function type() {
     var currentPhrase = phrases[phraseIndex];
+    var nextDelay;
 
     if (isDeleting) {
-      el.textContent = currentPhrase.slice(0, charIndex - 1);
-      charIndex--;
+      charIndex -= 1;
+      el.textContent = currentPhrase.slice(0, charIndex);
+      nextDelay = DELETING_SPEED;
     } else {
-      el.textContent = currentPhrase.slice(0, charIndex + 1);
-      charIndex++;
+      charIndex += 1;
+      el.textContent = currentPhrase.slice(0, charIndex);
+      nextDelay = TYPING_SPEED;
     }
-
-    var delay = isDeleting ? deletingSpeed : typingSpeed;
 
     if (!isDeleting && charIndex === currentPhrase.length) {
-      delay = pauseAfterPhrase;
+      /* Finished typing — pause then start deleting */
       isDeleting = true;
+      nextDelay = PAUSE_AFTER;
     } else if (isDeleting && charIndex === 0) {
+      /* Finished deleting — advance to next phrase */
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
-      delay = pauseBeforeType;
+      nextDelay = PAUSE_BEFORE;
     }
 
-    setTimeout(type, delay);
+    setTimeout(type, nextDelay);
   }
 
-  setTimeout(type, pauseBeforeType);
+  /* Initial delay before first phrase starts */
+  setTimeout(type, PAUSE_BEFORE);
 })();

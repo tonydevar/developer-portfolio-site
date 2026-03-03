@@ -82,16 +82,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ============================================================
-     Skill bar animation — trigger on .visible
+     Skill bar animation — IntersectionObserver reads data-level
      ============================================================ */
-  const skillItems = document.querySelectorAll('.skill-item');
+  const skillItems = document.querySelectorAll('.skill-item[data-level]');
   if ('IntersectionObserver' in window && skillItems.length) {
     const skillObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            skillObserver.unobserve(entry.target);
+            var el = entry.target;
+            var level = parseInt(el.getAttribute('data-level'), 10) || 0;
+            var fill = el.querySelector('.skill-bar__fill');
+            if (fill) {
+              /* Animate width from 0 to data-level% */
+              fill.style.width = level + '%';
+            }
+            el.classList.add('visible');
+            skillObserver.unobserve(el);
           }
         });
       },
@@ -99,6 +106,14 @@ document.addEventListener('DOMContentLoaded', function () {
     );
     skillItems.forEach(function (el) {
       skillObserver.observe(el);
+    });
+  } else {
+    /* Fallback: set widths immediately */
+    skillItems.forEach(function (el) {
+      var level = parseInt(el.getAttribute('data-level'), 10) || 0;
+      var fill = el.querySelector('.skill-bar__fill');
+      if (fill) fill.style.width = level + '%';
+      el.classList.add('visible');
     });
   }
 
