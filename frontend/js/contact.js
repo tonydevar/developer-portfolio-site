@@ -4,13 +4,23 @@
    Contact Form — Feature 4: Contact Form Frontend Integration
    - Client-side validation (all fields required, email regex)
    - Loading state on submit button prevents double-submission
-   - POST JSON to http://localhost:3000/api/contact
+   - POST JSON to API_BASE + /api/contact (runtime-resolved)
    - 200 → clear form + green success banner
    - 400 → display returned error array as red error message
    - Network failure → generic red error
    - All states themed via CSS custom properties
    ============================================================ */
 (function initContactForm() {
+
+  /* ---- Runtime API base URL (dev: localhost:3000, prod: same origin) ---- */
+  var API_BASE = (function () {
+    var h = window.location.hostname;
+    if (h === 'localhost' || h === '127.0.0.1') {
+      return 'http://localhost:3000';
+    }
+    return window.location.origin;
+  })();
+
   var form      = document.getElementById('contact-form');
   if (!form) return;
 
@@ -124,7 +134,7 @@
     /* --- Loading state — prevents double submission --- */
     setLoading(true);
 
-    fetch('http://localhost:3000/api/contact', {
+    fetch(API_BASE + '/api/contact', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify({ name: name, email: email, message: message }),
