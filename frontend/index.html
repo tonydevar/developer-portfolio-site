@@ -108,125 +108,7 @@
         <p class="section-subtitle" data-animate>A selection of things I've built.</p>
 
         <div class="projects-grid" id="projects-grid">
-          <!-- Project Card 1 -->
-          <article class="project-card" data-animate>
-            <div class="project-card__img-wrap">
-              <img
-                src="images/project-ecommerce.png"
-                alt="E-Commerce Platform screenshot"
-                class="project-card__img"
-                onerror="this.style.display='none'"
-              />
-              <div class="project-card__img-fallback" style="--fallback-color:#6c63ff" aria-hidden="true">🛒</div>
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">E-Commerce Platform</h3>
-              <p class="project-card__description">
-                A full-stack e-commerce application with product listings, shopping cart,
-                and secure checkout. Built with React, Node.js, and PostgreSQL.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">PostgreSQL</span>
-                <span class="tag">Stripe</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://example.com/ecommerce" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-                <a href="https://github.com/example/ecommerce" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 2 -->
-          <article class="project-card" data-animate>
-            <div class="project-card__img-wrap">
-              <img
-                src="images/project-taskmanager.png"
-                alt="Task Management App screenshot"
-                class="project-card__img"
-                onerror="this.style.display='none'"
-              />
-              <div class="project-card__img-fallback" style="--fallback-color:#f7975a" aria-hidden="true">📋</div>
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Task Management App</h3>
-              <p class="project-card__description">
-                A collaborative task manager with real-time updates, drag-and-drop
-                boards, and team assignments. Powered by Vue.js and Firebase.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">Vue.js</span>
-                <span class="tag">Firebase</span>
-                <span class="tag">Tailwind</span>
-                <span class="tag">WebSockets</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://example.com/taskmanager" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-                <a href="https://github.com/example/taskmanager" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 3 -->
-          <article class="project-card" data-animate>
-            <div class="project-card__img-wrap">
-              <img
-                src="images/project-weather.png"
-                alt="Weather Dashboard screenshot"
-                class="project-card__img"
-                onerror="this.style.display='none'"
-              />
-              <div class="project-card__img-fallback" style="--fallback-color:#48c8e8" aria-hidden="true">🌤️</div>
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Weather Dashboard</h3>
-              <p class="project-card__description">
-                An interactive weather dashboard displaying real-time forecasts,
-                historical data charts, and location-based alerts using the OpenWeather API.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">JavaScript</span>
-                <span class="tag">Chart.js</span>
-                <span class="tag">REST API</span>
-                <span class="tag">CSS Grid</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://example.com/weather" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-                <a href="https://github.com/example/weather" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project Card 4 -->
-          <article class="project-card" data-animate>
-            <div class="project-card__img-wrap">
-              <img
-                src="images/project-portfolio.png"
-                alt="Developer Portfolio screenshot"
-                class="project-card__img"
-                onerror="this.style.display='none'"
-              />
-              <div class="project-card__img-fallback" style="--fallback-color:#4ecb71" aria-hidden="true">💼</div>
-            </div>
-            <div class="project-card__body">
-              <h3 class="project-card__title">Developer Portfolio Site</h3>
-              <p class="project-card__description">
-                This very portfolio — a responsive single-page site with smooth animations,
-                dark/light theme toggle, and a contact form backed by an Express API.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Express</span>
-              </div>
-              <div class="project-card__links">
-                <a href="https://example.com/portfolio" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-                <a href="https://github.com/example/portfolio" target="_blank" rel="noopener noreferrer">View Repo ↗</a>
-              </div>
-            </div>
-          </article>
+          <!-- Project cards rendered dynamically by js/projects.js -->
         </div>
       </div>
     </section>
@@ -428,6 +310,7 @@
   <script src="js/main.js"></script>
   <script src="js/typing.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/projects.js"></script>
   <script>
     document.getElementById('footer-year').textContent = new Date().getFullYear();
   </script>
