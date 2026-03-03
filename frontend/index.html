@@ -351,7 +351,7 @@
               my inbox is always open.
             </p>
             <ul class="contact-info__items">
-              <li class="contact-info__item"><span>📧</span> <span>alex@example.com</span></li>
+              <li class="contact-info__item"><span>📧</span> <span>jane@example.com</span></li>
               <li class="contact-info__item"><span>📍</span> <span>San Francisco, CA</span></li>
               <li class="contact-info__item"><span>💼</span> <span>Open to remote roles</span></li>
             </ul>
@@ -374,7 +374,9 @@
                 maxlength="100"
                 required
                 autocomplete="name"
+                aria-describedby="name-error"
               />
+              <span id="name-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
@@ -386,7 +388,9 @@
                 placeholder="your@email.com"
                 required
                 autocomplete="email"
+                aria-describedby="email-error"
               />
+              <span id="email-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
@@ -397,12 +401,14 @@
                 placeholder="What's on your mind?"
                 maxlength="2000"
                 required
+                aria-describedby="message-error"
               ></textarea>
+              <span id="message-error" class="field-error" role="alert" aria-live="polite"></span>
             </div>
 
             <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
 
-            <button type="submit" class="btn btn--primary" id="submit-btn">
+            <button type="submit" class="btn btn--primary" id="submit-btn" data-original-text="Send Message ✉️">
               Send Message ✉️
             </button>
           </form>
